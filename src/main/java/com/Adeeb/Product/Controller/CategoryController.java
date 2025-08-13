@@ -21,7 +21,7 @@ public class CategoryController {
         return service.getAllCategories();
     }
     // create category
-    @PostMapping("/categories")
+    @PostMapping("/category")
     public ResponseEntity<CategoryDTO> createCategory(@RequestBody CategoryDTO categoryDTO){
         return new ResponseEntity<>(service.createCategory(categoryDTO) , HttpStatus.CREATED);
     }
@@ -31,7 +31,7 @@ public class CategoryController {
     public ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id){
         return new ResponseEntity<>(service.getCategoryById(id) , HttpStatus.FOUND);
     }
-
+    // Delete category
     @DeleteMapping("/category/{id}")
     public String deleteCategory(@PathVariable Long id){
         return service.deleteCategory(id);
