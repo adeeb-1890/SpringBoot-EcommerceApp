@@ -26,7 +26,7 @@ public class CategoryController {
         return new ResponseEntity<>(service.createCategory(categoryDTO) , HttpStatus.CREATED);
     }
 
-    // get category by Id
+    // get category by id
     @GetMapping("category/{id}")
     public ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id){
         return new ResponseEntity<>(service.getCategoryById(id) , HttpStatus.FOUND);
