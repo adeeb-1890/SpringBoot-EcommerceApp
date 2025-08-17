@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class GlobalExceptionHandler {
     @ExceptionHandler(CategoryAlreadyExistsException.class)
     public ResponseEntity<String> handleCategoryAlreadyExistsException(CategoryAlreadyExistsException ex){
+
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
     }
 }
